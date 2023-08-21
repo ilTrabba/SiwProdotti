@@ -10,15 +10,15 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 
     public boolean existsByNameAndAddress(String name, String address);
 
-    public boolean existsByNameAndAddressAndEmail(String name, String address, String email);
+    public boolean existsByNameAndPriceAndEmail(String name, Float price, String email);
 
     public List<Product> findByName(String name);
 
     public List<Product> findByAddress(String address);
 
-    public List<Product> findByNameAndAddress(String name, String address);
+    public List<Product> findByNameAndPrice(String name, Float price);
 
-    public List<Product> findByEmail(String email);
+    public List<Product> findByPrice(Float price);
 
 
 }

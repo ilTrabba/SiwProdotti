@@ -3,9 +3,7 @@ package it.uniroma3.siw.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
 
@@ -31,7 +29,7 @@ public class Product {
 
 
     @ManyToMany
-    private Set<Supplier> suppliers;
+    private Set<Provider> providers;
 
     @OneToMany (mappedBy = "reviewedProduct",cascade = CascadeType.ALL)
     private Set<Review> reviews;
@@ -60,12 +58,12 @@ public class Product {
         this.price = price;
     }
 
-    public Set<Supplier> getSuppliers() {
-        return suppliers;
+    public Set<Provider> getProviders() {
+        return providers;
     }
 
-    public void setSuppliers(Set<Supplier> suppliers) {
-        this.suppliers = suppliers;
+    public void setProviders(Set<Provider> providers) {
+        this.providers = providers;
     }
 
     public String getDescription() {

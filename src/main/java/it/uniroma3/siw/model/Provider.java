@@ -1,15 +1,13 @@
 package it.uniroma3.siw.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-public class Supplier {
+public class Provider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +25,7 @@ public class Supplier {
     @OneToOne
     private Image logo;
 
-    @ManyToMany(mappedBy="suppliers",fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy="providers",fetch = FetchType.LAZY)
     private Set<Product> starredProducts;
 
     public Long getId() {
@@ -81,8 +79,8 @@ public class Supplier {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Supplier supplier = (Supplier) o;
-        return Objects.equals(name, supplier.name) && Objects.equals(address, supplier.address);
+        Provider provider = (Provider) o;
+        return Objects.equals(name, provider.name) && Objects.equals(address, provider.address);
     }
 
     @Override
