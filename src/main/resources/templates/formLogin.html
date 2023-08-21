@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Siw Prodotti</title>
+  <meta name="viewport" content="width=device-width,initials-scale=1.0">
+  <link rel="stylesheet" href="/css/loginPage.css">
+  <link rel="icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet">
+</head>
+<body>
+<nav>
+  <h2 class="logo">Siw Prodotti</h2>
+  <button type="button"><a href="/" class="sub">Home</a></button>
+</nav>
+<section>
+  <div class="form-box">
+    <div class="form-value">
+      <form th:action="@{/login}" method="post" class="form">
+        <div class="image">
+          <img src="/images/lupetto.jpg">
+        </div>
+        <span class="login">Log In</span>
+        <input type="text" name="username" placeholder="Username" class="form--input">
+        <input type="password" name="password" placeholder="Password" class="form--input">
+        <span th:if="${param.error != null}">Username o password errati</span>
+        <button type="submit" class="form--submit">
+          Login
+        </button>
+        <button class="form--submit">
+          <a href="/register" id="register">Register</a>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

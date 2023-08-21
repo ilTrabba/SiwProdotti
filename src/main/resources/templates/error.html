@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Siw Prodotti</title>
+  <meta name="viewport" content="width=device-width,initials-scale=1.0">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/error.css">
+  <link rel="icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet">
+</head>
+<body>
+<header></header>
+<nav>
+  <img src="/images/lupetto.jpg">
+  <h2 class="logo">Siw Prodotti</h2>
+  <ul>
+    <li><a href="/products" class="sub">Product</a></li>
+    <li><a href="/providers" class="sub">Providers</a></li>
+  </ul>
+  <div id="lo">
+    <div th:if="${userDetails}">
+      <b th:text="${userDetails.username}" class="username"></b>
+      <button type="button"><a href="/logout" class="log">Logout</a></button>
+    </div>
+    <div th:unless="${userDetails}">
+      <button type="button"><a href="/login" class="log">Login</a></button>
+    </div>
+  </div>
+</nav>
+<footer></footer>
+<div class="content">
+  <div class="message">
+    <h1>Error!!!</h1>
+    <h1>Something went wrong</h1>
+  </div>
+</div>
+</body>
+</html>
