@@ -12,6 +12,8 @@ public interface ProviderRepository extends CrudRepository<Provider,Long> {
 
     public boolean existsByNameAndAddress(String name, String address);
 
+    public boolean existsByNameAndAddressAndEmail(String name, String address,String email);
+
     public List<Provider> findByName(String name);
 
     public List<Provider> getProvidersByStarredProductsNotContaining(Product product);

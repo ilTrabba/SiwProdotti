@@ -8,13 +8,11 @@ import java.util.List;
 
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
-    public boolean existsByNameAndAddress(String name, String address);
+    public boolean existsByNameAndPrice(String name, Float price);
 
-    public boolean existsByNameAndPriceAndEmail(String name, Float price, String email);
+    public boolean existsByNameAndPriceAndDescription(String name, Float price, String description);
 
     public List<Product> findByName(String name);
-
-    public List<Product> findByAddress(String address);
 
     public List<Product> findByNameAndPrice(String name, Float price);
 
