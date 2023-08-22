@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Siw Prodotti</title>
+  <meta name="viewport" content="width=device-width,initials-scale=1.0">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/indexAdmin.css">
+  <link rel="icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet">
+</head>
+
+<body>
+<header></header>
+<nav>
+  <img src="/images/lupetto.jpg">
+  <h2 class="logo">Siw Prodotti</h2>
+  <ul>
+    <li><a href="/products" class="sub">Products</a></li>
+    <li><a href="/providers" class="sub">Providers</a></li>
+  </ul>
+  <div id="lo">
+    <div th:if="${userDetails}">
+      <b th:text="${userDetails.username}" class="username"></b>
+      <button type="button"><a href="/logout" class="log">Logout</a></button>
+    </div>
+    <div th:unless="${userDetails}">
+      <button><a href="/login" class="log">Login</a></button>
+    </div>
+  </div>
+</nav>
+<footer></footer>
+<div class="admin-form">
+  <div class="operations-menu">
+    <h1 class="title">Operazioni Admin</h1>
+    <div class="sub-operation-form">
+      <h1>Operazioni Prodotti</h1>
+      <ul>
+        <button class="option"><a href="/admin/formNewProduct" class="log">Aggiungi prodotto</a></button>
+        <!--
+            <button class="option"><a href="/admin/updateProduct" class="log">Aggiorna prodotto</a></button>
+        -->
+      </ul>
+    </div>
+    <div class="sub-operation-form">
+      <h1>Operazioni Fornitori</h1>
+      <ul>
+        <button class="option"><a href="/admin/formNewProvider" class="log">Aggiungi fornitore</a></button>
+        <!--
+            <button class="option"><a href="/admin/updateProvider" class="log">Aggiorna provider</a></button>
+        -->
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

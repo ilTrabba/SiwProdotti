@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Siw Prodotti</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initials-scale=1.0">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/updateProduct.css">
+  <link rel="icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet">
+</head>
+
+<body>
+<header></header>
+<nav>
+  <img src="/images/lupetto.jpg">
+  <h2 class="logo">Siw Prodotti</h2>
+  <ul>
+    <li><a href="/" class="sub">Home</a></li>
+    <li><a href="/products" class="sub">Products</a></li>
+    <li><a href="/providers" class="sub">Providers</a></li>
+  </ul>
+  <div id="lo">
+    <div th:if="${userDetails}">
+      <b th:text="${userDetails.username}" class="username"></b>
+      <button type="button"><a href="/logout" class="log">Logout</a></button>
+    </div>
+    <div th:unless="${userDetails}">
+      <button type="button"><a href="/login" class="log">Login</a></button>
+    </div>
+  </div>
+</nav>
+<footer></footer>
+<div th:if="${product}" class="content">
+  <div class="product-content">
+    <h1 th:text="${product.name + ', ' + product.price + '$'}">Nome Prodotto, Prezzo Prodotto</h1>
+    <button type="button">
+      <a th:href="'/products/'+${product.id}" class="log">Go back to Product</a>
+    </button>
+    <div class="product-providers">
+      <div class="label">
+        <div class="main-label">
+          <h3>Club:</h3>
+          <button type="button">
+            <a th:href="'/admin/manage/addProvider/'+${product.id}" class="log">Update</a>
+          </button>
+        </div>
+        <div th:if="${providers.isEmpty()}" class="providers-content">
+          <h4>Nessun fornitore</h4>
+        </div>
+        <div th:unless="${providers.isEmpty()}" class="provider-content">
+          <div class="providers">
+            <ul th:each="provider: ${providers}">
+              <div class="card">
+                <a th:href="@{'/providers' + '/' + ${provider.id}}">
+
+                  <img th:src="@{'/display/image/' + ${provider.logo.id}}">
+                  <div class="card-overlay">
+                    <button class="overlay-button">
+                      <a th:href="@{'/admin/manage/removeprovider/' + ${product.id} + '/' + ${provider.id}}" class="log">
+                        remove
+                      </a>
+                    </button>
+                  </div>
+                  <div class="club-info">
+                    <h4 th:text="${provider.name + ', ' + provider.address}">.</h4>
+                  </div>
+                </a>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
