@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Siw Prodotti</title>
+  <meta name="viewport" content="width=device-width,initials-scale=1.0">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/products.css">
+  <link rel="icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet">
+</head>
+<body>
+<header></header>
+<nav>
+  <img src="/images/lupetto.jpg">
+  <h2 class="logo">Siw Prodotti</h2>
+  <ul>
+    <li><a href="/" class="sub">Home</a></li>
+    <li><a href="/products" class="sub">Products</a></li>
+    <li><a href="/providers" class="sub">Providers</a></li>
+  </ul>
+  <div id="lo">
+    <div th:if="${userDetails}">
+      <b th:text="${userDetails.username}" class="username"></b>
+      <button type="button"><a href="/logout" class="log">Logout</a></button>
+    </div>
+    <div th:unless="${userDetails}">
+      <button type="button"><a href="/login" class="log">Login</a></button>
+    </div>
+  </div>
+</nav>
+<footer></footer>
+<div class="content">
+  <div class="second-nav">
+    <h1>Elenco Prodotti</h1>
+    <form class="group" th:action="@{/searchProduct}" method="post" id="search-bar">
+      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+      <input placeholder="Search" type="text" th:value="${name}" id="name" name="name" class="input">
+    </form>
+  </div>
+  <div th:if="${products.isEmpty()}">
+    Non ci sono prodotti nel catalogo
+  </div>
+  <div th:unless="${products.isEmpty()}">
+    <div class="products">
+      <ul th:each="product: ${products}">
+        <div class="card">
+          <a th:href="@{'/products' + '/' + ${product.id}}">
+            <img th:src="@{'/display/image/' + ${product.foto.id}}">
+            <!--<img th:src="@{'data:image/*;base64,'+${product.foto.base64Image}}">-->
+            <div class="product">
+              <h4 th:text="${product.name + ', ' + product.price + '$'}">.</h4>
+            </div>
+          </a>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('search-bar');
+
+    form.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        form.submit();
+      }
+    });
+  });
+</script>
+</body>
+</html>

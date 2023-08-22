@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Siw Prodotti</title>
+  <meta name="viewport" content="width=device-width,initials-scale=1.0">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="icon" href="/images/s.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet">
+</head>
+<body>
+<header></header>
+<nav>
+  <img src="/images/lupetto.jpg">
+  <h2 class="logo">Siw Prodotti</h2>
+  <ul>
+    <li><a href="/products" class="sub">Products</a></li>
+    <li><a href="/providers" class="sub">Providers</a></li>
+  </ul>
+  <div id="lo">
+    <div th:if="${userDetails}">
+      <b th:text="${userDetails.username}" class="username"></b>
+      <button type="button"><a href="/logout" class="log">Logout</a></button>
+    </div>
+    <div th:unless="${userDetails}">
+      <button type="button"><a href="/login" class="log">Login</a></button>
+    </div>
+  </div>
+</nav>
+<footer></footer>
+<div class="hero">
+  <div class="presentation">
+    <h1>Raccolta di prodotti e fornitori</h1>
+    <p>Piattaforma dedicata alla raccolta di prodotti ed i loro fornitori, offrendo agli utenti un'ampia gamma di contenuti acquistabili. Gli utenti potranno scoprire informazioni dettagliate su ogni prodotto, come recensioni e valutazioni, nonché informazioni sui fornitori aventi disponibilità dei vari prodotti..</p>
+  </div>
+</div>
+</body>
+</html>
