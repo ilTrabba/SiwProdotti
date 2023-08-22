@@ -59,4 +59,38 @@ public class ReviewController {
         this.productRepository.save(product);
         return this.productService.function(model, product, this.globalController.getUser());
     }
+
+
+    @GetMapping("/user/modifyingReview/{productId}/{reviewId}")
+    public String updateReview(Model model, @PathVariable("productId") Long productId,@PathVariable("reviewId") Long reviewId){
+        Product product = this.productRepository.findById(productId).get();
+        Review review = this.reviewRepository.findById(reviewId).get();
+
+        model.addAttribute("review", review);
+        model.addAttribute("product", product);
+        model.addAttribute("username", this.globalController.getUser().getUsername());
+
+        return "formUpdateReview.html";
+    }
+
+    @PostMapping("/user/updateReview/{productId}/{reviewId}")
+    public String updateReview(Model model, @Valid @ModelAttribute("review") Review updatedReview, BindingResult bindingResult,@PathVariable("productId") Long productId, @PathVariable("reviewId") Long reviewId) {
+        this.reviewValidator.validate(updatedReview, bindingResult);
+
+        if (!bindingResult.hasErrors()) {
+            Review existingReview = this.reviewRepository.findById(reviewId).orElse(null);
+
+            if (existingReview != null) {
+                existingReview.setTitle(updatedReview.getTitle());
+                existingReview.setText(updatedReview.getText());
+                existingReview.setRating(updatedReview.getRating());
+
+                this.reviewRepository.save(existingReview);
+
+            }
+        }
+
+        Product product = this.productRepository.findById(productId).orElse(null);
+        return this.productService.function(model, product, this.globalController.getUser());
+    }
 }
