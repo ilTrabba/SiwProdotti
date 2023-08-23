@@ -93,6 +93,13 @@ public class ProductService {
     }
 
     @Transactional
+    public Float getAvgRating(Long productId) {
+        Product product = this.productRepository.findById(productId).orElse(null);
+
+        return productRepository.getAvgRatingByProduct(product);
+    }
+
+    @Transactional
     public boolean alreadyReviewed(Set<Review> reviews,String author){
         if(reviews != null)
             for(Review rev : reviews)

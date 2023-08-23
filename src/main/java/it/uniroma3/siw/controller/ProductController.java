@@ -3,6 +3,7 @@ package it.uniroma3.siw.controller;
 
 import it.uniroma3.siw.controller.validator.ProductValidator;
 import it.uniroma3.siw.model.Product;
+import it.uniroma3.siw.model.Provider;
 import it.uniroma3.siw.repository.ProviderRepository;
 import it.uniroma3.siw.repository.ProductRepository;
 import it.uniroma3.siw.service.ProductService;
@@ -122,5 +123,17 @@ public class ProductController {
         model.addAttribute("providers", product.getProviders());
 
         return "admin/formUpdateProduct.html";
+    }
+
+    @GetMapping("/admin/deleteProduct/{productId}")
+    public String deleteProduct(Model model, @PathVariable("productId") Long productId){
+        Product product = this.productRepository.findById(productId).get();
+
+        for (Provider provider : product.getProviders()) {
+            provider.getStarredProducts().remove(product);
+        }
+
+        this.productRepository.delete(product);
+        return this.showAllProducts(model);
     }
 }
