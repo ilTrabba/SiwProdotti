@@ -25,4 +25,12 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     public Float getAvgRatingByProduct(@Param("product") Product product);
 
 
+    @Query("SELECT p\n" +
+            "FROM Product p\n" +
+            "LEFT JOIN Review r ON r.reviewedProduct.id = p.id\n" +
+            "GROUP BY p.id\n" +
+            "ORDER BY COALESCE(AVG(r.rating), 0) DESC")
+    List<Product> findProductsOrderByAverageRating();
+
+
 }

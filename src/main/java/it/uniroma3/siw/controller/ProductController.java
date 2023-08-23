@@ -68,6 +68,12 @@ public class ProductController {
         return "products.html";
     }
 
+    @GetMapping("/orderedProducts")
+    public String showAllProductsOrdered(Model model) {
+        model.addAttribute("products", this.productService.getProductsOrderedByAverageRating());
+        return "products.html";
+    }
+
     @GetMapping("/products/{productId}")
     public String getProduct(Model model, @PathVariable("productId") Long id) {
         Product product = this.productRepository.findById(id).get();

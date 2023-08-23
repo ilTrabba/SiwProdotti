@@ -16,9 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class ProductService {
@@ -97,6 +95,22 @@ public class ProductService {
         Product product = this.productRepository.findById(productId).orElse(null);
 
         return productRepository.getAvgRatingByProduct(product);
+    }
+
+    @Transactional
+    public Collection<Product> getProductsOrderedByAverageRating() {
+
+        Collection<Product> products = this.productRepository.findProductsOrderByAverageRating();
+
+        Collection<Product> orderedProducts = new ArrayList<>();
+
+        for (Product product : products) {
+
+            orderedProducts.add(product);
+
+        }
+
+        return orderedProducts;
     }
 
     @Transactional
