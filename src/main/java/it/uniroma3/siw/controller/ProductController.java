@@ -129,7 +129,7 @@ public class ProductController {
         model.addAttribute("product", product);
         model.addAttribute("providers", product.getProviders());
 
-        return "admin/formUpdateId.html";
+        return "admin/formUpdateProduct.html";
     }
 
     @GetMapping("/admin/manage/removeProvider/{productId}/{providerId}")

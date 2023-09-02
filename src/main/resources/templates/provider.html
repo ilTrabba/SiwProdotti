@@ -53,7 +53,7 @@
                             <!--<img th:src="@{'data:image/*;base64,'+${product.image.base64Image}}">-->
                             <img th:src="@{'/display/image/' + ${product.foto.id}}">
                             <div class="product-info">
-                                <h4 th:text="${product.name + ',' + player.price}">.</h4>
+                                <h4 th:text="${product.name + ',' + product.price}">.</h4>
                             </div>
                         </a>
                     </div>
