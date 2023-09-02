@@ -1,6 +1,7 @@
 package it.uniroma3.siw.repository;
 
 import it.uniroma3.siw.model.Product;
+import it.uniroma3.siw.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -31,6 +32,8 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
             "GROUP BY p.id\n" +
             "ORDER BY COALESCE(AVG(r.rating), 0) DESC")
     List<Product> findProductsOrderByAverageRating();
+
+
 
 
 }

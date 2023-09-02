@@ -1,15 +1,13 @@
 package it.uniroma3.siw.service;
 
 
-import it.uniroma3.siw.model.Image;
-import it.uniroma3.siw.model.Product;
-import it.uniroma3.siw.model.Provider;
-import it.uniroma3.siw.model.Review;
+import it.uniroma3.siw.model.*;
 import it.uniroma3.siw.repository.ProviderRepository;
 import it.uniroma3.siw.repository.ImageRepository;
 import it.uniroma3.siw.repository.ProductRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -111,6 +109,11 @@ public class ProductService {
         }
 
         return orderedProducts;
+    }
+
+    @Transactional
+    public Set<Product> findUserProducts( User user){
+        return  user.getProducts();
     }
 
     @Transactional

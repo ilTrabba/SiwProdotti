@@ -19,6 +19,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AuthenticationController {
@@ -87,4 +88,17 @@ public class AuthenticationController {
         }
         return "formRegister.html";
     }
+
+    @GetMapping(value = "/success")
+    public String defaultAfterLogin(Model model) {
+
+        UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
+        if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
+            return "homePageAdmin.html";
+        }
+        return "redirect:/";
+    }
+
+
 }

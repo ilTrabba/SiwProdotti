@@ -44,7 +44,7 @@
       <a th:href="'/admin/manage/' + ${product.id}" class="log">Update Product</a>
     </button>
     <div class="product-providers-content">
-      <h1>Clubs:</h1>
+      <h1>Providers:</h1>
       <div th:if="${product.providers}">
         <div th:if="${product.providers.isEmpty()}">
           Nessun provider offre questo prodotto al momento.

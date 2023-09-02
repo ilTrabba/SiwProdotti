@@ -2,6 +2,7 @@ package it.uniroma3.siw.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.Objects;
@@ -17,7 +18,7 @@ public class Product {
     @NotBlank
     private String name;
 
-    @NotBlank
+    @NotNull
     private Float price;
 
     @Column(length = 200)

@@ -4,8 +4,10 @@ package it.uniroma3.siw.controller;
 import it.uniroma3.siw.controller.validator.ProductValidator;
 import it.uniroma3.siw.model.Product;
 import it.uniroma3.siw.model.Provider;
+import it.uniroma3.siw.model.User;
 import it.uniroma3.siw.repository.ProviderRepository;
 import it.uniroma3.siw.repository.ProductRepository;
+import it.uniroma3.siw.service.CredentialsService;
 import it.uniroma3.siw.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ public class ProductController {
     private ProductValidator productValidator;
     @Autowired
     private GlobalController globalController;
+
+    @Autowired
+    private CredentialsService credentialsService;
 
     @GetMapping("/admin/formNewProduct")
     public String newProduct(Model model) {
@@ -71,6 +76,13 @@ public class ProductController {
     @GetMapping("/orderedProducts")
     public String showAllProductsOrdered(Model model) {
         model.addAttribute("products", this.productService.getProductsOrderedByAverageRating());
+        return "products.html";
+    }
+
+    @GetMapping("/cartProducts")
+    public String showCartProducts(Model model) {
+        User user = this.credentialsService.getCredentials(this.globalController.getUser().getUsername()).getUser();
+        model.addAttribute("products", this.productService.findUserProducts(user));
         return "products.html";
     }
 

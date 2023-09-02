@@ -6,20 +6,21 @@ body, h1, h2, h3, p, ul {
 
 body {
     background-image: url(/images/magazzino1.jpg);
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(55, 55, 55, 0.8);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     font-family: Verdana, sans-serif;
+    background-attachment: fixed;
 
 }
 
 
 /* Navigation */
 nav {
-    background:linear-gradient(to right, white, sandybrown, darkgoldenrod);
-    color: black;
+    background: black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,6 +31,11 @@ nav img {
     width: 60px;
     height: 60px;
     margin-right: 10px;
+}
+
+.omino{
+    position: absolute;
+    left: 0;
 }
 
 nav .logo {
@@ -48,7 +54,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
@@ -84,20 +90,15 @@ nav ul li .sub:hover {
 }
 */
 
+
 button {
-    /*
-    position: absolute;
-    right: 20px;
-    top: 40px;*/
 
 
-    border: none;
-    /*background: #f0bc42;*/
-    background-image: linear-gradient(to left, silver , darkgray , cornsilk , sandybrown );
+    background-image: linear-gradient(to right, black, darkgray, cornsilk, sandybrown);
     background-size: 200% 100%;
     padding: 12px 30px;
     border-radius: 20px;
-    color: black;
+    color: white;
     font-weight: bold;
     font-size: 15px;
     transition: background-position 0.3s ease;
@@ -110,7 +111,7 @@ button:hover {
 
 .username {
     font-style: sans-serif;
-    color: cornsilk;
+    color: white;
     padding-right: 10px;
 }
 
