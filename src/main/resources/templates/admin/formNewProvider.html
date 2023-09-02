@@ -42,10 +42,10 @@
         <input required type="text" th:field="${provider.name}" placeholder="Name" class="form--input">
         <span th:if="${#fields.hasErrors('name')}" th:errors="*{provider.name}"></span>
 
-        <input required type="number" th:field="${provider.address}" placeholder="address" class="form--input">
+        <input required type="text" th:field="${provider.address}" placeholder="address" class="form--input">
         <span th:if="${#fields.hasErrors('address')}" th:errors="*{provider.address}"></span>
 
-        <input required type="number" th:field="${provider.email}" placeholder="email" class="form--input">
+        <input required type="text" th:field="${provider.email}" placeholder="email" class="form--input">
         <span th:if="${#fields.hasErrors('email')}" th:errors="*{provider.email}"></span>
 
         <span><input required type="file" name="file"></span>
