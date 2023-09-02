@@ -1,0 +1,124 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/images/magazzino1.jpg);
+    background-color: rgba(0,0,0,0.8);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Verdana, sans-serif;
+
+}
+
+
+/* Navigation */
+nav {
+    background:linear-gradient(to right, white, sandybrown, darkgoldenrod);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+nav img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+nav .logo {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav ul li .sub:hover {
+    color: cornsilk;
+    transition: .3s;
+}
+
+/* Login/Logout buttons */
+/*
+#lo {
+    display: flex;
+    align-items: center;
+}
+
+#lo .log {
+    border: none;
+    background: #f0bc42;
+    background: linear-gradient(45deg, orange, #f0bc42);
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: #8e1f2f;
+    font-weight: bold;
+    font-size: 15px;
+    transition: .4s;
+    text-decoration: none;
+}
+
+#lo .log:hover {
+    transform: scale(1.3);
+    background-color: white;
+    color: #333;
+}
+*/
+
+button {
+    /*
+    position: absolute;
+    right: 20px;
+    top: 40px;*/
+
+
+    border: none;
+    /*background: #f0bc42;*/
+    background-image: linear-gradient(to left, silver , darkgray , cornsilk , sandybrown );
+    background-size: 200% 100%;
+    padding: 12px 30px;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-position 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-position: 100% 0;
+}
+
+.username {
+    font-style: sans-serif;
+    color: cornsilk;
+    padding-right: 10px;
+}
+
+.log {
+    text-decoration: none;
+    color: #8e1f2f;
+}
+
+.log:visited {
+    color: inherit;
+}
