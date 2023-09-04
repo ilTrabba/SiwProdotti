@@ -1,0 +1,86 @@
+.admin-form {
+    height: 100vh;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start; /* Imposta l'allineamento in alto */
+    justify-content: center;
+}
+
+.operations-menu {
+
+    text-align: center;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+.operations-menu .title {
+    font-size: 60px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Style the sub-operation forms */
+
+.sub-operation-form h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+
+}
+.sub-operation-form {
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    color:white;
+}
+
+.sub-operation-form ul {
+    padding-top: 1%;
+    padding-left: 2%;
+    color:white;
+}
+
+.sub-operation-form ul li a {
+    font-size:20px;
+    text-decoration: none;
+}
+
+.sub-operation-form ul li a:visited {
+    color:inherit;
+}
+
+.sub-operation-form ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2em;
+}
+
+
+
+.option{
+    text-decoration: none;
+    border: none;
+    /*background: #f0bc42;*/
+    background-image: linear-gradient(to left, silver , darkgray , cornsilk , sandybrown );
+    background-size: 200% 100%;
+    padding: 12px 30px;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.option:hover {
+    transform: scale(1.2);
+}
+
+.op{
+    text-decoration: none;
+    color: black;
+}

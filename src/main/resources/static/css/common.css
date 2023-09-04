@@ -14,12 +14,14 @@ body {
     font-family: Verdana, sans-serif;
     background-attachment: fixed;
 
+    align-items: center;
+
 }
 
 
 /* Navigation */
 nav {
-    background: black;
+    background:linear-gradient(to right, white, rgba(128, 128, 128, 1), black);
     color: white;
     display: flex;
     align-items: center;
@@ -33,10 +35,7 @@ nav img {
     margin-right: 10px;
 }
 
-.omino{
-    position: absolute;
-    left: 0;
-}
+
 
 nav .logo {
     font-size: 24px;

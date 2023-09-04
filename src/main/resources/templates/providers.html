@@ -46,7 +46,7 @@
             <!--<img th:src="@{'data:image/*;base64,'+${provider.profilePicture.base64Image}}">-->
             <img th:src="@{'/display/image/' + ${provider.logo.id}}">
             <div class="provider-info">
-              <h4 th:text="${provider.name + ',' + provider.Address}">.</h4>
+              <h4 th:text="${provider.name + ', ' + provider.Address}">.</h4>
             </div>
           </a>
         </div>

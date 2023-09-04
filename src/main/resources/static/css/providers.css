@@ -1,0 +1,168 @@
+.content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.21);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.second-nav {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-nav h1 {
+    font-size: 24px;
+}
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 250px;
+}
+
+/* Style the search bar */
+#search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.input:focus{
+    border: 1px solid darkorange;
+}
+
+/* Style the product cards */
+.providers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.card {
+    width: 225px;
+    height: 320px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    border: 2px solid #c3c6ce;
+    transition: 0.2s ease-out;
+    overflow: hidden;
+}
+
+.card:hover{
+    border: 1px solid darkorange;
+}
+
+.card a {
+    text-decoration: none;
+    color: #333;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.provider-info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.provider-info h4 {
+    margin: 10px 0;
+}
+
+/* Style the sort button */
+.sortButton {
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.sortButton span{
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.sortButton a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sort {
+    width: 30%;
+    background-color: sandybrown;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sort:hover{
+    background-color: darkorange;
+}
+
+.overlay-button {
+    background-color: rgba(0, 123, 255, 0);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover .card-overlay {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    /* Ensure the overlay is on top */
+}
