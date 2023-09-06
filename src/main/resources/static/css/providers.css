@@ -1,10 +1,9 @@
+
+
 .content {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.21);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .second-nav {
@@ -16,10 +15,6 @@
     justify-content: space-between;
 }
 
-.second-nav h1 {
-    font-size: 24px;
-}
-
 .group {
     display: flex;
     line-height: 28px;
@@ -28,30 +23,40 @@
     max-width: 250px;
 }
 
-/* Style the search bar */
-#search-bar {
-    display: flex;
-    align-items: center;
+.input {
+    width: 100%;
+    height: 50px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+
+.input::placeholder {
+    color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+    outline: none;
+    border-color: rgba(234, 76, 137, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
 }
 
-.input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 200px;
-}
-
-.input:focus{
-    border: 1px solid darkorange;
-}
-
-/* Style the product cards */
 .providers {
     display: flex;
     flex-wrap: wrap;
@@ -69,22 +74,18 @@
     overflow: hidden;
 }
 
-.card:hover{
-    border: 1px solid darkorange;
+.card:hover {
+    transform: scale(1.13);
+    cursor: pointer;
 }
 
-.card a {
-    text-decoration: none;
-    color: #333;
-}
-
-.card img {
+.card a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.provider-info{
+.provider-info {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -98,71 +99,9 @@
 }
 
 .provider-info h4 {
-    margin: 10px 0;
-}
-
-/* Style the sort button */
-.sortButton {
-    text-align: right;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-}
-
-.sortButton span{
-    font-size: 15px;
-    font-weight: normal;
-    margin-bottom: 5px;
-}
-
-.sortButton a{
-    color: black;
-    text-decoration: none;
     font-weight: bold;
+    margin: 0;
 }
 
-.sort {
-    width: 30%;
-    background-color: sandybrown;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    cursor: pointer;
-    text-decoration: none;
-}
 
-.sort:hover{
-    background-color: darkorange;
-}
 
-.overlay-button {
-    background-color: rgba(0, 123, 255, 0);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card:hover .card-overlay {
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    /* Ensure the overlay is on top */
-}
