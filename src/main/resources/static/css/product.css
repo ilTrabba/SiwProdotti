@@ -1,0 +1,181 @@
+/* Content */
+.content {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.21);
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+}
+
+.card img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-content {
+    flex: 1;
+
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.update-product {
+    margin-top: 20px;
+}
+
+.product-providers-content {
+    margin-top: 20px;
+    background-size: cover;
+}
+
+.providers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.providers .cards {
+    width: 100px;
+    height: 125px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    border: 2px solid #c3c6ce;
+    transition: 0.2s ease-out;
+    overflow: hidden;
+}
+
+.providers img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.provider-info h4 {
+    font-size: 16px;
+    margin: 0;
+}
+
+
+/*personal review*/
+.product-review-content{
+    padding: 20px;
+    margin: 20px;
+    color: white;
+
+    font-size: 20px;
+    display: flex;
+}
+
+
+.personal-review {
+    width: 100%;
+    background: rgba(128, 128, 128, 0.395);
+    border-radius: 30px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form--input1 {
+    border: none;
+    font-size: 20px;
+    border-radius: 15px;
+    height: 50px;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.form--input2 {
+    border: none;
+    font-size: 20px;
+    border-radius: 15px;
+    height: 50px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.review-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-options input {
+    width: 75px;
+    font-size: 20px;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.review-options .comment-button {
+    margin-bottom: 2%;
+    margin-right: 2%;
+}
+
+.other-review {
+    color:white;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 2%;
+}
+
+.review {
+    background: rgba(128, 128, 128, 0.395);
+    border-radius: 30px;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+.review p {
+    word-wrap: break-word;
+    font-size: 25px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-review {
+    background: red;
+    color:white;
+}
+
+.update-review {
+    background: orange;
+}
+
+.log{
+    color:white;
+}
+
+
+.zeroRec{
+    color:white;
+    margin-left: 5%;
+}

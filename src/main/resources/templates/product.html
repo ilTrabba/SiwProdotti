@@ -14,7 +14,7 @@
 <body>
 <header></header>
 <nav>
-  <img src="/images/lupetto.jpg">
+  <img src="/images/ominoConCarrello3.png">
   <h2 class="logo">Siw Prodotti</h2>
   <ul>
     <li><a href="/" class="sub">Home</a></li>
@@ -90,7 +90,7 @@
 <div>
   <div th:if="${product.reviews}">
     <div th:if="${product.reviews.isEmpty()}">
-      <p>non ci sono review su questo prodotto</p>
+      <p class="zeroRec">non ci sono review su questo prodotto</p>
     </div>
     <div th:unless="${product.reviews.isEmpty()}" class="other-review">
       <h1 style="padding-top: 2%; font-size: 40px;">Recensioni</h1>
