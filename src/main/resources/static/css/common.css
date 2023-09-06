@@ -93,7 +93,7 @@ nav ul li .sub:hover {
 button {
 
 
-    background-image: linear-gradient(to right, black, darkgray, cornsilk, sandybrown);
+    background: linear-gradient(to bottom, silver,darkgray);
     background-size: 200% 100%;
     padding: 12px 30px;
     border-radius: 20px;
@@ -106,6 +106,7 @@ button {
 
 button:hover {
     background-position: 100% 0;
+    transform: scale(1.2);
 }
 
 .username {
