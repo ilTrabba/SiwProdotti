@@ -83,7 +83,7 @@ public class ProductService {
         }
         model.addAttribute("review", new Review());
         model.addAttribute("reviews", product.getReviews());
-
+        model.addAttribute("avgRating",this.getAvgRating(product.getId()));
 
         return "product.html";
     }
@@ -99,6 +99,22 @@ public class ProductService {
     public Collection<Product> getProductsOrderedByAverageRating() {
 
         Collection<Product> products = this.productRepository.findProductsOrderByAverageRating();
+
+        Collection<Product> orderedProducts = new ArrayList<>();
+
+        for (Product product : products) {
+
+            orderedProducts.add(product);
+
+        }
+
+        return orderedProducts;
+    }
+
+    @Transactional
+    public Collection<Product> getProductsOrderedByHighestPrice() {
+
+        Collection<Product> products = this.productRepository.findProductsOrderByHihestPrice();
 
         Collection<Product> orderedProducts = new ArrayList<>();
 

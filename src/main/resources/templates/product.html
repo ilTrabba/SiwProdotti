@@ -40,6 +40,14 @@
   <div class="player-content">
     <h1 th:text="${product.name} +  ', ' + ${product.price} + '$'">Nome prodotto, prezzo prodotto</h1>
     <p th:text="${product.description}">Product Description</p>
+    <!-- valutazione media -->
+    <div th:if="${avgRating != null && avgRating != 0}" class="product-average-rating">
+      <p>Valutazione Media: <span th:text="${avgRating} + '/5'"></span></p>
+    </div>
+    <div th:unless="${avgRating != null && avgRating != 0}">
+      <p>Questo prodotto non ha recensioni</p>
+    </div>
+
     <button th:if="${role != null && role == 'ADMIN'}" class="update-product">
       <a th:href="'/admin/manage/' + ${product.id}" class="log">Update Product</a>
     </button>

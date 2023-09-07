@@ -148,3 +148,49 @@ input:hover {
     right: 125px;
     top: 123px;
 }
+
+
+/* Stile per il pulsante a tendina */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Stile per il pulsante principale */
+.dropdown .dropbtn {
+    background-color: rgba(0,0,0,0.756);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Stile per il contenitore dei collegamenti a tendina */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 60%;
+}
+
+/* Stile per i collegamenti a tendina */
+.dropdown-content a {
+    background-color: rgba(0,0,0,0.756);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+
+}
+
+/* Quando si passa il mouse sopra il pulsante a tendina, mostra i collegamenti */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

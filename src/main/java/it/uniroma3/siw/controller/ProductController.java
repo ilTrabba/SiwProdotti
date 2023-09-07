@@ -73,9 +73,15 @@ public class ProductController {
         return "products.html";
     }
 
-    @GetMapping("/orderedProducts")
-    public String showAllProductsOrdered(Model model) {
+    @GetMapping("/orderedRatingProducts")
+    public String showAllProductsRatingOrdered(Model model) {
         model.addAttribute("products", this.productService.getProductsOrderedByAverageRating());
+        return "products.html";
+    }
+
+    @GetMapping("/orderedPriceProducts")
+    public String showAllProductsPriceOrdered(Model model) {
+        model.addAttribute("products", this.productService.getProductsOrderedByHighestPrice());
         return "products.html";
     }
 
