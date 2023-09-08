@@ -12,6 +12,7 @@
     padding-bottom: 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .group {
@@ -154,15 +155,17 @@ input:hover {
 .dropdown {
     position: relative;
     display: inline-block;
+    align-self: flex-end;
 }
 
 /* Stile per il pulsante principale */
-.dropdown .dropbtn {
-    background-color: rgba(0,0,0,0.756);
+.dropdwon .dropbtn {
+    background-color: rgba(0,0,0,0.1);
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 /* Stile per il contenitore dei collegamenti a tendina */
@@ -170,17 +173,19 @@ input:hover {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 60px;
+    max-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
     z-index: 1;
-    width: 60%;
+    border-radius: 10px;
+
 }
 
 /* Stile per i collegamenti a tendina */
 .dropdown-content a {
-    background-color: rgba(0,0,0,0.756);
+    background-color: rgba(0,0,0,0.8);
     color: white;
-    padding: 10px 20px;
+
     border: none;
     width: 100%;
     text-align: left;
@@ -190,7 +195,36 @@ input:hover {
 
 }
 
+.dropdown-content a:hover{
+    background-color: rgba(0,0,0,0.7);
+}
+
 /* Quando si passa il mouse sopra il pulsante a tendina, mostra i collegamenti */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+
+/*classe per annullare le regole della classe 'button' */
+.no-button-style {
+    background: rgba(0, 0, 0, 0.756);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.no-button-style:hover{
+    transform: scale(1);
+}
+
+.no-button-style::after {
+    color: white; /* Cambia il colore della freccetta */
+    font-size: 12px; /* Cambia la dimensione della freccetta */
+    margin-left: 5px; /* Aggiunge uno spazio tra il testo e la freccetta */
 }
