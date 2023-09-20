@@ -41,7 +41,7 @@
     <div class="product-providers">
       <div class="label">
         <div class="main-label">
-          <h3>Club:</h3>
+          <h3>Providers:</h3>
           <button type="button">
             <a th:href="'/admin/manage/addProvider/'+${product.id}" class="log">Update</a>
           </button>
@@ -63,7 +63,7 @@
                       </a>
                     </button>
                   </div>
-                  <div class="club-info">
+                  <div class="provider-info">
                     <h4 th:text="${provider.name + ', ' + provider.address}">.</h4>
                   </div>
                 </a>
